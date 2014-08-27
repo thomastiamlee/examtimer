@@ -1,0 +1,4 @@
+examtimer
+=========
+
+Timer for exams
