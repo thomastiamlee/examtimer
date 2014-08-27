@@ -1,0 +1,42 @@
+@font-face {
+  font-family: digital;
+  src: url(digital-7__mono_.ttf);
+}
+
+@font-face {
+  font-family: digital-colon;
+  src: url(DS-DIGIB.TTF);
+}
+
+body {
+  background: black;
+}
+
+h1, h2, h2, h4, h5, h6, p {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+div#timer {
+  margin: 100px auto;
+  visibility: hidden;
+}
+
+div#timer h1 {
+  font-family: digital;
+  font-size: 200px;
+  text-align: center;
+  color: lime;
+}
+
+div#timer h1 span.colon {
+  font-family: digital-colon;
+}
+
+div#timer p {
+  font-family: Arial;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+}

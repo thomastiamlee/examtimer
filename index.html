@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Exam Timer</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/target.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="timer">
+      <h1 id="time"></h1>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+
+        function refreshTimer() {
+          var current = new Date();
+          var diff = target - current;
+
+          if (diff <= 0) {
+            diff = 0;
+          }
+
+          var seconds = Math.floor(diff / 1000);
+          var minutes = Math.floor(seconds / 60);
+          var hours = Math.floor(minutes / 60);
+          seconds -= minutes * 60;
+          minutes -= hours * 60;
+
+          var hourString = "" + hours;
+          while (hourString.length < 2) {
+            hourString = "0" + hourString;
+          }
+          var minuteString = "" + minutes;
+          while (minuteString.length < 2) {
+            minuteString = "0" + minuteString;
+          }
+          var secondString = "" + seconds;
+          while (secondString.length < 2) {
+            secondString = "0" + secondString;
+          }
+
+          if (diff <= 600000) {
+            $("#time").css("color", "red");
+          }
+          else if (diff <= 1800000) {
+            $("#time").css("color", "yellow");
+          }
+          else {
+            $("#time").css("color", "lime");
+          }
+
+
+          var timeString = hourString + "<span class=\"colon\">:</span>" + minuteString + "<span class=\"colon\">:</span>" + secondString;
+          $("#time").html(timeString);
+          $("#timer").css("visibility", "visible");
+        }
+
+        setInterval(refreshTimer, 1000);
+      });
+    </script>
+  </body>
+</html>
