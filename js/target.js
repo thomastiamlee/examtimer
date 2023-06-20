@@ -10,7 +10,7 @@ $.urlParam = function(name){
 }
 
 function initialize() {
-  target = new Date($.urlParam('y'), $.urlParam('m'), $.urlParam('d'), $.urlParam('hr'), $.urlParam('min'), 0, 0);
+  target = new Date($.urlParam('y'), $.urlParam('m') - 1, $.urlParam('d'), $.urlParam('hr'), $.urlParam('min'), 0, 0);
 }
 
 initialize();
